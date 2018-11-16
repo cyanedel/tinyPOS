@@ -8,95 +8,14 @@
 
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('#customerName').on("blur", function(){
-				$('#customerName-print').text($(this).val());
-			});
-		});
-	</script>
 	<!-- <script src="js/vue.min.js"></script> -->
 </head>
 <body>
-	<nav class="navbar bg-light hide-on-print" style="line-height: 32px">
+	<nav id="nav-header" class="navbar bg-light hide-on-print" style="line-height: 32px">
 		<div class="container">Hotel Cashier</div>
 	</nav>
-	<div class="container" style="padding-top: 10px; padding-bottom: 10px;">
-		<button type="button" class="btn btn-success">Check-in</button>
-		<button type="button" class="btn btn-primary">Browse Receipt</button>
-	</div>
-	<div class="container hide-on-print">
-	<!-- create receipt -->
-	<form>
-		<div class="form-category lead font-weight-bold">Customer Information</div>
-		<div class="form-group">
-			<label for="customerName">Name</label>
-			<input type="text" name="customerName" id="customerName" maxlength="150" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="customerIdType">ID Type</label>
-			<select name="customerIdType" id="customerIdType" class="form-control">
-				<option>Nationality ID Card</option>
-				<option>Passport</option>
-				<option>Driving License</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="customerIdNo">ID No</label>
-			<input type="text" name="customerIdNo" id="customerIdNo" maxlength="150" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="mobilePhone">Phone Number</label>
-			<input type="number" name="mobilePhone" id="mobilePhone" class="form-control">
-		</div>
-		<hr>
-		<div class="form-category lead font-weight-bold">Room Information</div>
-		<!-- <div class="form-group">
-			<label for="roomType">Room Type</label>
-			<select name="roomType" id="roomType" class="form-control">
-				<option>Single</option>
-				<option>Double</option>
-			</select>
-		</div> -->
-		<div class="form-group">
-			<label for="roomNo">Room</label>
-			<input type="text" name="roomNo" id="roomNo" class="form-control" maxlength="5" style="margin-bottom: .5rem;">
-			<input type="radio" name="roomType" checked="true"> Single
-			<input type="radio" name="roomType"> Double
-		</div>
-		<div class="form-group">
-			<label for="checkindate">Check-in</label>
-			<input type="datetime-local" name="checkindate" id="checkindate" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="checkoutdate">Check-out</label>
-			<input type="datetime-local" name="checkoutdate" id="checkoutdate" class="form-control">
-		</div>
-		<hr>
-		<div class="form-category lead font-weight-bold">Billing Information</div>
-		<div class="form-group">
-			<label for="roomPrice">Name</label>
-			<input type="number" name="roomPrice" id="roomPrice" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="extraBed">Extra Bed</label>
-			<input type="number" name="extraBed" id="extraBed" class="form-control">
-		</div>
-		<div class="form-group">
-			<label for="discountValue">Discount</label>
-			<input type="number" name="discountValue" id="discountValue" class="form-control">
-			<input type="radio" name="discountType" checked="true"> Fixed
-			<input type="radio" name="discountType"> %
-		</div>
-	</form>
-	</div>
-	<div class="hide-on-screen">
-		<table>
-			<tr>
-				<td>Name</td>
-				<td><span id="customerName-print"></span></td>
-			</tr>
-		</table>
-	</div>
+	<div id="view-screen" class="container hide-on-print"></div>
+	<div id="view-print" class="hide-on-screen"></div>
 </body>
+<script src="js/index.js"></script>
 </html>
